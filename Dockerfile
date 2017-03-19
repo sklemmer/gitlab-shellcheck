@@ -8,11 +8,12 @@ RUN apt-get update && \
 	tar -xvf /tmp/cabal.tar.gz && \
 	rm /tmp/cabal.tar.gz && \
 	mv dist-newstyle/build/x86_64-linux/ghc-8.0.2/cabal-install-${CABAL_VERSION}/build/cabal/cabal /usr/local/bin/cabal && \
+	rm -r dist-newstyle/ && \
 	cabal update && \
 	cabal install ShellCheck && \
 	mv /root/.cabal/bin/shellcheck /usr/local/bin/shellcheck && \
 	rm /usr/local/bin/cabal && \
-	rm /root/.cabal && \
+	rm -r /root/.cabal && \
 	apt-get autoremove ghc wget tar -y && \
 	apt-get clean
 
