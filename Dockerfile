@@ -14,7 +14,7 @@ RUN apt-get update && \
 	mv /root/.cabal/bin/shellcheck /usr/local/bin/shellcheck && \
 	rm /usr/local/bin/cabal && \
 	rm -r /root/.cabal && \
-	apt-get autoremove ghc wget tar -y && \
+	apt-get autoremove ghc -y && \
 	apt-get clean
 
 
